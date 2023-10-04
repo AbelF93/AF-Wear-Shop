@@ -13,8 +13,8 @@ const Navbar = () => {
         justify-center items-center">
           <Image src="/AF_logo.svg" alt="
           AF Logo" 
-          width={75}
-          height={75}
+          width={50}
+          height={50}
           className="object-contain"
           />
           </Link>
@@ -22,7 +22,7 @@ const Navbar = () => {
       <CustomButton
       title="Sign In" 
       btnType="button"
-      containerStyles="text-primery-blue rounded-full bg-white min-w-[100px] "/>
+      containerStyles="text-primery-blue rounded-md bg-white min-w-[100px] "/>
       </nav> 
     </header>
   )
