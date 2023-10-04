@@ -1,7 +1,14 @@
 import Image from 'next/image'
-import { Hero, SearchBar, CustomFilter } from '@/components';
-export default function Home() {
-  return (
+import { Hero, SearchBar, CustomFilter, CarCard } from '@/components';
+import { fetchCars } from '@/utils';
+
+
+export default async function Home() { //? Made this function async to be able to use the fetch
+const allCars = await fetchCars();
+
+const isDataEmpty = !Array.isArray(allCars) || allCars.
+length < 1 || !allCars;
+return (
     <main className="overflow-hidden">
       <Hero />
       <section className="mt-12 padding-x padding-y max-width" 
@@ -22,6 +29,21 @@ export default function Home() {
               </div>  
 
         </div>
+
+        {!isDataEmpty ? (
+          <section className='text-white'>
+            <div className="home__cars-wrapper">
+              {allCars?.map((car) => (
+                <CarCard car={car} />))}
+            </div>
+
+          </section>
+        ): (
+          <div className='home__error-container text-white'>
+            <h2 className='text-red-500 text-xl'>No result</h2>
+            <p>{allCars?.message}</p>
+          </div>
+        )}
 
       </section>
     </main>
