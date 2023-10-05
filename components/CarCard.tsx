@@ -3,7 +3,7 @@
 import { CarProps } from "@/types";
 import  CustomButton from "./CustomButton";
 import CarDetails from "./CarDetails";
-import {caculateCarRent} from "@/utils";
+import {caculateCarRent, generateCarImageUrl} from "@/utils";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -40,9 +40,9 @@ const [isOpen, setIsOpen] = useState(false);
                 </span>
             </p>
 
-            <div className="realtive w-full h-40 my-3 
+            <div className="relative w-full h-40 my-3 
                  object-contain">
-                <Image src="/hero.png" 
+                <Image src={generateCarImageUrl(car)}
                 alt="car_model" width={400} height={600} className="
                 object-contain"/>
             </div>
