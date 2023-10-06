@@ -44,7 +44,7 @@ const CarDetails = ( { isOpen, closeModal, car }:CarDetailsProps) => {
                             leaveTo="opacity-0 scale-95"
                         >
                    <Dialog.Panel className="relative w-full max-w-lg max-h-[95vh] 
-                        overflow-y-auto transform rounded-2xl p-6 bg-white text-left
+                   overflow-x-hidden overflow-y-hidden transform rounded-2xl p-6 bg-white text-left
                         shadow-xsl transition-all flex flex-col gap-5 shadow-xl">
                         <button //? Adding the close Button
                             type="button"

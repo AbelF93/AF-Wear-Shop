@@ -11,10 +11,10 @@ const SearchButton = ({additionnalClasses} : {additionnalClasses: string}) => (
   <button type="submit" className={`-ml-3 z-10 ${additionnalClasses}`}>
 
     <Image 
-      src="/magnifying-glass.png"
+      src="/magnifying-glass.svg"
       alt="magnifying glass"
-      width={30}
-      height={30}
+      width={90}
+      height={90}
       className="object-contain"
     />
 
@@ -69,27 +69,27 @@ const SearchBar = () => {
            manufacturer={manufacturer}
            setManufacturer={setManufacturer}
            />
-
-         <SearchButton additionnalClasses="sm:hidden"/>
         </div>
-        <div className="searchbar_item bg-blue-800 rounded-md">
+        <div className="searchbar_item bg-blue-800 rounded-e-md">
             <Image 
               src="/model-icon.png"
               alt="car model"
               width={50}
               height={50}
-              className="absolute t-20 w-[20px] h-[20px] ml-4"
+              className="absolute max-sm:top-[75px]  top-2 w-[30px] h-[30px] ml-2"
             />
+           
             <input type="text" 
             name="model" 
             value={model} 
             onChange={(e) => setModel(e.target.value)}
             placeholder="Q3"
-            className="searchbar_input text"
+            className="search-manufacturer__input text-white"
             />
-            <SearchButton additionnalClasses="sm:hidden"/>
+           
     
         </div>
+        <SearchButton additionnalClasses="sm:hidden"/>
         <SearchButton additionnalClasses="max-sm:hidden"/>
     </form>
   )
