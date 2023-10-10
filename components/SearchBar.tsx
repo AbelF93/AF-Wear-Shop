@@ -57,7 +57,7 @@ const SearchBar = () => {
     const newPathName = `${window.location.pathname}?
     ${searchParams.toString()}`
   
-    router.push(newPathName, { scroll: false }) //Push the modified Path into the url
+    router.push(newPathName, { scroll: false }) //Push the modified Path into the url, prevent scrolling reset
   }
 
     return (
