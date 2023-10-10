@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Hero, SearchBar, CustomFilter, CarCard, ShowMore } from '@/components';
 import { fetchCars } from '@/utils';
+import { fuels, yearsOfProduction } from '@/constants';
 
 
 export default async function Home({ searchParams }) { //? Made this function async to be able to use the fetch
@@ -29,9 +30,9 @@ return (
         <div className='home__filters'>          
               <SearchBar />
               
-              <div className="home__filters-container">
-                    <CustomFilter title="fuel" />  
-                    <CustomFilter title="year" />  
+              <div className="home__filter-container">
+                    <CustomFilter title="fuel" options={fuels} />  
+                    <CustomFilter title="year" options={yearsOfProduction} />  
               </div>  
 
         </div>
@@ -42,10 +43,12 @@ return (
               {allCars?.map((car) => (
                 <CarCard car={car} />))}
             </div>
+
             <ShowMore 
               pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length}
             />
+
           </section>
         ): (
           <div className='home__error-container text-white'>
@@ -53,6 +56,8 @@ return (
             <p>{allCars?.message}</p>
           </div>
         )}
+
+
 
       </section>
     </main>
