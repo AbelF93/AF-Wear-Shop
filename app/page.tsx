@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Hero, SearchBar, CustomFilter, CarCard } from '@/components';
+import { Hero, SearchBar, CustomFilter, CarCard, ShowMore } from '@/components';
 import { fetchCars } from '@/utils';
 
 
@@ -42,7 +42,10 @@ return (
               {allCars?.map((car) => (
                 <CarCard car={car} />))}
             </div>
-
+            <ShowMore 
+              pageNumber={(searchParams.pageNumber || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ): (
           <div className='home__error-container text-white'>
