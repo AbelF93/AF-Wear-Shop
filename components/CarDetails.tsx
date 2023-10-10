@@ -44,7 +44,7 @@ const CarDetails = ( { isOpen, closeModal, car }:CarDetailsProps) => {
                             leaveTo="opacity-0 scale-95"
                         >
                    <Dialog.Panel className="relative w-full max-w-lg max-h-[95vh] 
-                   overflow-x-hidden overflow-y-hidden transform rounded-2xl p-6 bg-white text-left
+                   overflow-x-hidden transform rounded-2xl p-6 bg-white text-left
                         shadow-xsl transition-all flex flex-col gap-5 shadow-xl">
                         <button //? Adding the close Button
                             type="button"
@@ -63,7 +63,7 @@ const CarDetails = ( { isOpen, closeModal, car }:CarDetailsProps) => {
 
                         <div className="flex-1 flex flex-col gap-3">
                             <div className="relative left-10 w-full h-600 rounded-md">
-                                <Image src={generateCarImageUrl(car, 'angle')} 
+                                <Image src={generateCarImageUrl(car, 'image')} //! Cannot access the image
                                 alt="car_model" width={400} height={600} className="
                                 object-fit"/>
                             </div>

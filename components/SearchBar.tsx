@@ -13,34 +13,34 @@ const SearchButton = ({additionnalClasses} : {additionnalClasses: string}) => (
     <Image 
       src="/magnifying-glass.svg"
       alt="magnifying glass"
-      width={90}
-      height={90}
-      className="object-contain"
+      width={100}
+      height={100}
+      className="object-contain bg-blue-500 rounded-md pl-5"
     />
 
   </button>
 )
 
 const SearchBar = () => {
-    const[manufacturer, setManufacturer ] = useState('');
-    const [model, setModel] = useState('');
-    const router = useRouter ();
+    const[manufacturer, setManufacturer ] = useState(''); //! Listen Change on Manufacturer
+    const [model, setModel] = useState(''); //! Listen Change on Model
+    const router = useRouter (); //declare a Router
 
+ 
     const handleSearch = (e:React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+      e.preventDefault(); 
 
       if(manufacturer === '' && model === ''){
         return alert('You need to fill the search bar')
       }
 
-      updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase()
+      updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase()//calling search Params
       )
     }
   
 
     const updateSearchParams= (model: string, manufacturer:string) => {
-      const searchParams = new URLSearchParams(window.
-      location.search);
+      const searchParams = new URLSearchParams(window.location.search);
 
       if (model) {
         searchParams.set('model',model)
@@ -53,12 +53,11 @@ const SearchBar = () => {
       } else {
         searchParams.delete('manufacturer')
       }
-    
 
     const newPathName = `${window.location.pathname}?
     ${searchParams.toString()}`
   
-    router.push(newPathName)
+    router.push(newPathName, { scroll: false }) //Push the modified Path into the url
   }
 
     return (

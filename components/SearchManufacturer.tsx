@@ -48,7 +48,7 @@ const SearchManufacturer = ({manufacturer, setManufacturer}
                 {filteredManufacterers.map((item) => (
                         <Combobox.Option key={item}
                         className={({active}) => `
-                        reltive search-manufacturer_option
+                        relative search-manufacturer_option
                         ${active ? 'bg-cyan-500 text-white':'text-gray-400'}
                         `}
                         value={item}
