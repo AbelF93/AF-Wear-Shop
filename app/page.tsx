@@ -30,7 +30,7 @@ return (
         <div className='home__filters'>          
               <SearchBar />
               
-              <div className="home__filters-container flex">
+              <div className="home__filter-container">
                     <CustomFilter title="fuel" options={fuels} />  
                     <CustomFilter title="year" options={yearsOfProduction} />  
               </div>  
@@ -44,6 +44,7 @@ return (
                 <CarCard car={car} />))}
             </div>
 
+            
           </section>
         ): (
           <div className='home__error-container text-white'>
@@ -51,6 +52,8 @@ return (
             <p>{allCars?.message}</p>
           </div>
         )}
+
+
 
       </section>
     </main>
