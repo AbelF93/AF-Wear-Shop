@@ -13,9 +13,9 @@ const SearchButton = ({additionnalClasses} : {additionnalClasses: string}) => (
     <Image 
       src="/magnifying-glass.svg"
       alt="magnifying glass"
-      width={100}
-      height={100}
-      className="object-contain bg-blue-500 rounded-md pl-5"
+      width={45}
+      height={45}
+      className="object-contain bg-blue-500 rounded-lg"
     />
 
   </button>
@@ -57,7 +57,7 @@ const SearchBar = () => {
     const newPathName = `${window.location.pathname}?
     ${searchParams.toString()}`
   
-    router.push(newPathName, { scroll: false }) //Push the modified Path into the url
+    router.push(newPathName, { scroll: false }) //Push the modified Path into the url, prevent scrolling reset
   }
 
     return (
@@ -88,8 +88,8 @@ const SearchBar = () => {
            
     
         </div>
-        <SearchButton additionnalClasses="sm:hidden"/>
-        <SearchButton additionnalClasses="max-sm:hidden"/>
+        <SearchButton additionnalClasses="sm:hidden px-5"/>
+        <SearchButton additionnalClasses="max-sm:hidden px-5"/>
     </form>
   )
 }
